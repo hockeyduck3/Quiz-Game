@@ -1,0 +1,48 @@
+html {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: rgb(221, 221, 221);
+    min-height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-dark {
+    background-color: #444 !important;
+}
+
+h2, .navbar-brand {
+    font-family: 'Yellowtail', cursive;
+}
+
+.navbar {
+    padding: 0;
+    border-bottom: 3px solid black;
+}
+
+.navbar-brand {
+    padding: 20px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    height: 4.5rem;
+    width: 100%;
+    background-color: #444;
+    color: white;
+    text-align: center;
+    border-top: 3px solid rgb(145, 145, 145);
+}
+
+footer p{
+    margin: 1px 0 0 0;
+    padding: 5px 0 0 2px;
+}
