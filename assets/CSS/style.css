@@ -59,8 +59,6 @@ h2 {
 .hsLink:hover {
     text-decoration: none;
     color: black;
-    transform: scale(1.05);
-    transition: linear 0.3s;
 }
 
 main p {
