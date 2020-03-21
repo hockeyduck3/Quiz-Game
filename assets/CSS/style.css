@@ -53,6 +53,10 @@ main p {
     background-color: #444;
 }
 
+.main-btn:hover {
+    background-color: rgb(116, 116, 116)
+}
+
 .card {
     border: 3px solid #444;
 }
