@@ -16,7 +16,7 @@ body {
 }
 
 /* Navbar */
-h2, .navbar-brand {
+h2, .navbar-brand, .main-btn {
     font-family: 'Yellowtail', cursive;
 }
 
@@ -46,6 +46,11 @@ main p {
     font-size: 18px;
     letter-spacing: 1px;
     line-height: 1.6em;
+}
+
+.main-btn {
+    font-size: 2rem;
+    background-color: #444;
 }
 
 .card {
@@ -79,6 +84,10 @@ hr {
 .container h1 {
     margin-bottom: 25px;
     font-size: 35px;
+}
+
+.hide {
+    display: none;
 }
 
 
