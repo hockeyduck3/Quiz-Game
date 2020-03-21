@@ -38,8 +38,29 @@ main {
     box-shadow: 2px 9px 15px -3px #444;
 }
 
+.card-title {
+    display: flex;
+    flex-direction: row;
+}
+
 h2 {
     font-size: 45px;
+}
+
+.hsLink {
+    font-size: 25px;
+    margin-top: 10px;
+    color: black;
+    padding-right: 18px;
+    position: absolute;
+    right: 0;
+}
+
+.hsLink:hover {
+    text-decoration: none;
+    color: black;
+    transform: scale(1.05);
+    transition: linear 0.3s;
 }
 
 main p {
@@ -54,7 +75,7 @@ main p {
 }
 
 .main-btn:hover {
-    background-color: rgb(116, 116, 116)
+    background-color: rgb(116, 116, 116);
 }
 
 .card {
@@ -109,4 +130,19 @@ footer {
 footer p{
     margin: 1px 0 0 0;
     padding: 5px 0 0 2px;
+}
+
+/* Media */
+@media(max-width: 640px) {
+    .card-title {
+        flex-direction: column;
+    }
+
+    .hsLink {
+        font-size: 25px;
+        margin: 5px 0;
+        color: black;
+        padding-right: 0px;
+        position: relative;
+    }
 }
