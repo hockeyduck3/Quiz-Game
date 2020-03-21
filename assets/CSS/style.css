@@ -15,6 +15,7 @@ body {
     background-color: #444 !important;
 }
 
+/* Navbar */
 h2, .navbar-brand {
     font-family: 'Yellowtail', cursive;
 }
@@ -30,6 +31,56 @@ h2, .navbar-brand {
     margin-right: auto;
     font-size: 30px;
 }
+
+/* Main section */
+main {
+    margin: 45px 5%;
+    box-shadow: 2px 9px 15px -3px #444;
+}
+
+h2 {
+    font-size: 45px;
+}
+
+main p {
+    font-size: 18px;
+    letter-spacing: 1px;
+    line-height: 1.6em;
+}
+
+.card {
+    border: 3px solid #444;
+}
+
+.card-body {
+    padding: 1.04rem;
+}
+
+.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+#Hello {
+    width: 25%;
+    float: left;
+    margin-right: 2%;
+    border-radius: 5%;
+    border: 2px solid #444;
+    box-shadow: 2px 6px 15px -3px #444;
+}
+
+hr {
+    height: 2px;
+    background-color: #444;
+    border: none;
+}
+
+.container h1 {
+    margin-bottom: 25px;
+    font-size: 35px;
+}
+
 
 /* Footer */
 footer {
