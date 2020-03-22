@@ -20,18 +20,35 @@
             <main class="card">
                 <section class="card-body">
                     <div class="card-title">
-                        <h2>Quiz Game!</h2>
+                        <h2 id="cardH2">Quiz Game!</h2>
                         <a href="highscores.html" class="hsLink">View Highscores</a>
+                        <p class="timer hide">Time left: <span class="seconds">60</span></p>
                     </div>
     
                     <hr class="line">
+
+                    <!-- This paragraph will be seen by the user first -->
                     <div class="startParagraph">
                         <p>Welcome to my Quiz game!</p>
                         <p>This is a quick and simple quiz game that I made for one of my class assignments, using HTML, CSS/Bootstrap, and Javascript! Right now there is only a limited set of questions, but I do plan on adding more once I gain a better understanding of Javascript!</p>
                         <p>Hope you enjoy and have fun! 😄</p>
                     </div>
-    
-                    <button type="button" class="btn btn-secondary btn-lg btn-block start-btn main-btn">Start</button>
+
+                    <!-- After the user hits next on the starting screen they will be met with the instructions -->
+                    <div class="instructions hide">
+                        <p>On the next screen you will see a question with 4 different answers, but only 1 will be right!</p>
+
+                        <ul>
+                            <li>You will have 60 seconds to complete this quiz.</li>
+                            <li>For every answer you get right you will receive 5 points!</li>
+                            <li><em>But,</em> for every question you get wrong you will lose 5 points.</li>
+                            <li>If you finish the quiz with some time left still on the clock, that remining time will be added to your points.</li>
+                            <li>Finally, GLHF!</li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="btn btn-secondary btn-lg btn-block first-btn main-btn">Next</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block start-btn main-btn hide">Start</button>
                     <button type="button" class="btn btn-secondary btn-lg btn-block next-btn main-btn hide">Next</button>
                 </section>
             </main>
