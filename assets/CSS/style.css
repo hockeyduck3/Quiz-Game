@@ -16,7 +16,7 @@ body {
 }
 
 /* Navbar */
-h2, .navbar-brand, .main-btn {
+h2, .navbar-brand, .main-btn, .game-btn {
     font-family: 'Yellowtail', cursive;
 }
 
@@ -74,18 +74,22 @@ main p {
     margin: 20px 0;
 }
 
-.main-btn {
+.main-btn, .game-btn {
     font-size: 2rem;
     background-color: #444;
 }
 
-.main-btn:hover {
+.main-btn:hover, .game-btn:hover {
     background-color: rgb(116, 116, 116);
 }
 
 .game-btn {
     width: 100%;
     padding: 25px;
+    margin-top: 20px;
+}
+
+.btn-block+.btn-block {
     margin-top: 20px;
 }
 
@@ -126,6 +130,13 @@ hr {
     display: none;
 }
 
+.correct, .correct:hover, .correct:focus, .correct:active {
+    background-color: darkgreen;
+}
+
+.wrong, .wrong:hover, .wrong:focus, .wrong:active {
+    background-color: darkred;
+}
 
 /* Footer */
 footer {
