@@ -42,13 +42,25 @@ function startFunc() {
 function timerFunc() {
     var interval = 60;
 
-    var timer = setInterval( function(){ 
+    var time = setInterval( function(){ 
        interval--;
 
        seconds.textContent = interval;
 
+        if (interval === 30){
+            timer.setAttribute('style', 'color: darkred')
+        }
+
+        if (interval === 20) {
+            timer.setAttribute('style', 'color: rgb(163, 4, 4)')
+        }
+
        if (interval === 10) {
-           clearInterval(timer);
+           timer.setAttribute('style', 'color: red')
+       }
+
+       if (interval === 0) {
+        clearInterval(time);
        }
     }, 1000);
 }
