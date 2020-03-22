@@ -60,7 +60,7 @@ h2 {
 .hsLink:hover {
     text-decoration: none;
     color: rgb(109, 109, 109);
-    transition: linear 0.4s;
+    transition: linear 0.3s;
 }
 
 main p {
