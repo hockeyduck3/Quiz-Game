@@ -15,6 +15,7 @@ var seconds = document.querySelector('.seconds');
 var score = 0;
 var index = 0;
 var time;
+var interval = 60;
 
 firstBtn.addEventListener('click', firstFunc);
 startBtn.addEventListener('click', startFunc);
@@ -56,8 +57,6 @@ function startFunc() {
 
 // Timer function
 function timerFunc() {
-    var interval = 60;
-
     time = setInterval( function(){ 
        interval--;
 
@@ -77,6 +76,7 @@ function timerFunc() {
 
        if (interval === 0) {
         clearInterval(time);
+        stopGame();
        }
     }, 1000);
 }
@@ -160,6 +160,14 @@ function checkAnswerFunc(event) {
 // Stop the game function
 function stopGame() {
     clearInterval(time);
+
+    var finalScore = score + interval;
+
+    if (finalScore < 0) {
+        finalScore = 0;
+    }
+
+    window.location.href = "highscores.html"
 }
 
 // Questions/Answers
