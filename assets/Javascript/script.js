@@ -4,6 +4,7 @@ var firstBtn = document.querySelector('.first-btn');
 var instructions = document.querySelector('.instructions');
 var highscoreLink = document.querySelector('.hsLink');
 var cardTitle = document.querySelector('#cardH2');
+var questionTitle = document.querySelector('#question');
 var mainGame = document.querySelector('.main-game');
 var timer = document.querySelector('.timer');
 var seconds = document.querySelector('.seconds');
@@ -35,6 +36,9 @@ function startFunc() {
     // Show the timer.
     timer.classList.remove('hide');
     mainGame.classList.remove('hide');
+
+    // Start the game
+    questionsFunc();
 
     // Start the timer.
     timerFunc();
@@ -68,7 +72,21 @@ function timerFunc() {
 }
 
 // Question function
+function questionsFunc() {
+    var index = 0;
 
+    cardTitle.textContent = `Question ${index+1}`;
+    questionTitle.textContent = questions[index].question;
+
+    
+    for (var i = 0; i < 4; i++) {
+        document.querySelector(`.game-btn-${i}`).textContent = questions[index].answers[i].item;
+
+        if (questions[index].answers[i].true) {
+            document.querySelector(`.game-btn-${i}`).dataset.correct = 'true'
+          }
+    }
+}
 
 // Questions/Answers
 var questions = [
