@@ -3,6 +3,7 @@ var startBtn = document.querySelector('.start-btn');
 var firstBtn = document.querySelector('.first-btn');
 var gameBtn = document.querySelector('.game-btn');
 var nextBtn = document.querySelector('.next-btn');
+var finishBtn = document.querySelector('.finish-btn');
 var instructions = document.querySelector('.instructions');
 var highscoreLink = document.querySelector('.hsLink');
 var cardTitle = document.querySelector('#cardH2');
@@ -13,10 +14,12 @@ var seconds = document.querySelector('.seconds');
 
 var score = 0;
 var index = 0;
+var time;
 
 firstBtn.addEventListener('click', firstFunc);
 startBtn.addEventListener('click', startFunc);
 nextBtn.addEventListener('click', nextQuestion);
+finishBtn.addEventListener('click', stopGame);
 mainGame.addEventListener('click', checkAnswerFunc);
 
 // First function for when the first next button is clicked.
@@ -55,7 +58,7 @@ function startFunc() {
 function timerFunc() {
     var interval = 60;
 
-    var time = setInterval( function(){ 
+    time = setInterval( function(){ 
        interval--;
 
        seconds.textContent = interval;
@@ -135,7 +138,13 @@ function checkAnswerFunc(event) {
                 }
             }
     
-            nextBtn.classList.remove('hide');
+            // nextBtn.classList.remove('hide');
+
+            if (index != questions.length - 1) {
+                nextBtn.classList.remove('hide');
+            } else {
+                finishBtn.classList.remove('hide');
+            }
     
             if (event.target.dataset.correct === 'true') {
                 cardTitle.textContent = 'Correct!'
@@ -150,7 +159,7 @@ function checkAnswerFunc(event) {
 
 // Stop the game function
 function stopGame() {
-    
+    clearInterval(time);
 }
 
 // Questions/Answers
