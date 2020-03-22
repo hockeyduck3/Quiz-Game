@@ -4,6 +4,7 @@ var firstBtn = document.querySelector('.first-btn');
 var instructions = document.querySelector('.instructions');
 var highscoreLink = document.querySelector('.hsLink');
 var cardTitle = document.querySelector('#cardH2');
+var mainGame = document.querySelector('.main-game');
 var timer = document.querySelector('.timer');
 var seconds = document.querySelector('.seconds');
 
@@ -33,6 +34,7 @@ function startFunc() {
 
     // Show the timer.
     timer.classList.remove('hide');
+    mainGame.classList.remove('hide');
 
     // Start the timer.
     timerFunc();
@@ -64,6 +66,9 @@ function timerFunc() {
        }
     }, 1000);
 }
+
+// Question function
+
 
 // Questions/Answers
 var questions = [
