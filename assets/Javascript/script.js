@@ -64,3 +64,25 @@ function timerFunc() {
        }
     }, 1000);
 }
+
+// Questions/Answers
+var questions = [
+    {
+        question: 'What year was Microsoft founded?',
+        answers: [
+            {item: '1975', true: true},
+            {item: '1967', true: false},
+            {item: '1936', true: false},
+            {item: '1988', true: false}
+        ]
+    },
+    {
+        question: 'Which NHL team started their first season in 2017?',
+        answers: [
+            {item: 'Winnipeg Jets', true: false},
+            {item: 'Atlanta Thrashers', true: false},
+            {item: 'Vegas Golden Knights', true: true},
+            {item: 'Tampa Bay Lightning', true: false}
+        ]
+    }
+]
