@@ -1,6 +1,7 @@
 var startP = document.querySelector('.startParagraph');
 var startBtn = document.querySelector('.start-btn');
 var firstBtn = document.querySelector('.first-btn');
+var nextBtn = document.querySelector('.next-btn');
 var instructions = document.querySelector('.instructions');
 var highscoreLink = document.querySelector('.hsLink');
 var cardTitle = document.querySelector('#cardH2');
@@ -9,8 +10,13 @@ var mainGame = document.querySelector('.main-game');
 var timer = document.querySelector('.timer');
 var seconds = document.querySelector('.seconds');
 
+var score = 0;
+var index = 0;
+
 firstBtn.addEventListener('click', firstFunc);
 startBtn.addEventListener('click', startFunc);
+nextBtn.addEventListener('click', nextQuestion);
+mainGame.addEventListener('click', checkAnswerFunc);
 
 // First function for when the first next button is clicked.
 function firstFunc() {
@@ -73,8 +79,6 @@ function timerFunc() {
 
 // Question function
 function questionsFunc() {
-    var index = 0;
-
     cardTitle.textContent = `Question ${index+1}`;
     questionTitle.textContent = questions[index].question;
 
@@ -85,6 +89,50 @@ function questionsFunc() {
         if (questions[index].answers[i].true) {
             document.querySelector(`.game-btn-${i}`).dataset.correct = 'true'
           }
+    }
+}
+
+// Next question function
+function nextQuestion() {
+    index++;
+
+    for (var i = 0; i < 4; i++) {
+        if (document.querySelector(`.game-btn-${i}`).classList.contains('correct')) {
+            document.querySelector(`.game-btn-${i}`).classList.remove('correct');
+        } else {
+            document.querySelector(`.game-btn-${i}`).classList.remove('wrong');
+        }
+
+        if (document.querySelector(`.game-btn-${i}`).dataset.correct === 'true') {
+            document.querySelector(`.game-btn-${i}`).removeAttribute('data-correct');
+        }
+    }
+
+    nextBtn.classList.add('hide')
+
+    questionsFunc();
+}
+
+// Check Answers Function
+function checkAnswerFunc(event) {
+    if (event.target.matches('button')) {
+        for (var i = 0; i < 4; i++) {
+            if (document.querySelector(`.game-btn-${i}`).dataset.correct === 'true') {
+                document.querySelector(`.game-btn-${i}`).classList.add('correct');
+            } else {
+                document.querySelector(`.game-btn-${i}`).classList.add('wrong');
+            }
+        }
+
+        nextBtn.classList.remove('hide');
+
+        if (event.target.dataset.correct === 'true') {
+            cardTitle.textContent = 'Correct!'
+            score += 5;
+        } else {
+            cardTitle.textContent = 'Wrong...'
+            score -= 5;
+        }
     }
 }
 
@@ -106,6 +154,15 @@ var questions = [
             {item: 'Atlanta Thrashers', true: false},
             {item: 'Vegas Golden Knights', true: true},
             {item: 'Tampa Bay Lightning', true: false}
+        ]
+    },
+    {
+        question: 'What year did Google release the first Pixel phone?',
+        answers: [
+            {item: '2006', true: false},
+            {item: '2011', true: false},
+            {item: '1999', true: false},
+            {item: '2016', true: true}
         ]
     }
 ]
