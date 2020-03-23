@@ -250,7 +250,7 @@ var questions = [
         ]
     },
     {
-        question: 'Which NHL team started their first season in 2017?',
+        question: 'Which NHL team had their Inaugural season in 2017-18?',
         answers: [
             {item: 'Winnipeg Jets', true: false},
             {item: 'Atlanta Thrashers', true: false},
@@ -286,7 +286,7 @@ var questions = [
         ]
     },
     {
-        question: 'Who does Millie Bobby Brown play in Stranger Things?',
+        question: 'Who does Millie Bobby Brown play in the show Stranger Things?',
         answers: [
             {item: 'Eleven', true: true},
             {item: 'Twelve', true: false},
@@ -295,7 +295,7 @@ var questions = [
         ]
     },
     {
-        question: `Who is Tanjiro's sister in Demon Slayer?`,
+        question: `Who is Tanjiro's sister in the show Demon Slayer?`,
         answers: [
             {item: 'Inosuke', true: false},
             {item: 'Nezuko', true: true},
@@ -306,7 +306,7 @@ var questions = [
     {
         question: `What is JerryRigEverything's real name?`,
         answers: [
-            {item: 'Austin Evans', true: false},
+            {item: 'Jerry Stevens', true: false},
             {item: 'Linus Sebastian', true: false},
             {item: 'Zack Nelson', true: true},
             {item: 'Marques Brownlee', true: false}
@@ -322,7 +322,7 @@ var questions = [
         ]
     },
     {
-        question: 'Which NHL team was not in the Original 6?',
+        question: 'Which NHL team was not apart of the Original 6?',
         answers: [
             {item: 'Pittsburgh Penguins', true: true},
             {item: 'New York Rangers', true: false},
