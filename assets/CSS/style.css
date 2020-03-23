@@ -3,14 +3,15 @@ html {
 }
 
 body {
-    overflow-x: hidden;
     background-color: rgb(221, 221, 221);
-    min-height: 100%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-height: 100%;
+    overflow-x: hidden;
 }
 
+/* Had to use !important on this because the Bootstrap CSS also had !important on their's. */
 .bg-dark {
     background-color: #444 !important;
 }
@@ -21,10 +22,11 @@ h2, .navbar-brand, .main-btn, .game-btn, .high-scores ul {
 }
 
 .navbar {
-    padding: 0;
     border-bottom: 3px solid black;
+    padding: 0;
 }
 
+/* My Logo */
 .navbar-brand {
     padding: 20px 0px;
     margin-left: auto;
@@ -38,6 +40,7 @@ main {
     box-shadow: 2px 9px 15px -3px #444;
 }
 
+/* The text right before the hr */
 .card-title {
     display: flex;
     flex-direction: row;
@@ -47,29 +50,32 @@ h2 {
     font-size: 45px;
 }
 
+/* This is for the Highscores / Main game link, as well as the timer. */
 .hsLink, .timer {
-    transition: ease-out 0.3s;
+    color: black;
     font-size: 25px;
     margin-top: 12px;
-    color: black;
     padding-right: 18px;
     position: absolute;
     right: 0;
+    transition: ease-out 0.3s;
 }
 
 .hsLink:hover, .beforeFooter:hover {
-    text-decoration: none;
     color: rgb(109, 109, 109);
+    text-decoration: none;
     transition: linear 0.3s;
 }
 
+/* Paragraphs in the main section */
 main p {
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     letter-spacing: 2px;
     line-height: 1.7em;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* This is for the number that shows up on the countdown timer in the middle */
 .giantNumber {
     font-size: 200px;
     text-align: center;
@@ -80,9 +86,10 @@ main p {
     margin: 20px 0;
 }
 
+/* Styling for the buttons in the game */
 .main-btn, .game-btn {
-    font-size: 2rem;
     background-color: #444;
+    font-size: 2rem;
 }
 
 .main-btn:hover, .game-btn:hover {
@@ -90,15 +97,15 @@ main p {
 }
 
 .game-btn {
-    width: 100%;
-    padding: 25px;
     margin-top: 20px;
+    padding: 25px;
+    width: 100%;
 }
 
 .submit-btn {
-    padding-left: 15px;
-    height: 50px;
     font-size: 1.5rem;
+    height: 50px;
+    padding-left: 15px;
     width: 100px;
 }
 
@@ -106,6 +113,7 @@ main p {
     margin-top: 20px;
 }
 
+/* Styling for the main card in the center of the screen */
 .card {
     border: 3px solid #444;
 }
@@ -115,62 +123,57 @@ main p {
 }
 
 .container-fluid {
-    padding-right: 0;
     padding-left: 0;
+    padding-right: 0;
 }
 
-#Hello {
-    width: 25%;
-    float: left;
-    margin-right: 2%;
-    border-radius: 5%;
-    border: 2px solid #444;
-    box-shadow: 2px 6px 15px -3px #444;
-}
-
+/* Styling for the hr on the main card */
 hr {
-    height: 2px;
     background-color: #444;
     border: none;
+    height: 2px;
 }
 
-.container h1 {
-    margin-bottom: 25px;
-    font-size: 35px;
-}
-
+/* This styling needed to come before the .hide class otherwise hide would get overwritten. */
 .finalScore, #user-name, .submit-btn {
     display: inline-flex;
 }
 
+/* This class allows me to quickly hide anything I need on the page */
 .hide {
     display: none;
 }
 
+/* This styling will get added to the correct answer */
 .correct, .correct:hover, .correct:focus, .correct:active {
     background-color: darkgreen;
 }
 
+/* This styling will get added to the wrong answer */
 .wrong, .wrong:hover, .wrong:focus, .wrong:active {
     background-color: darkred;
 }
 
+/* Github Repo link styling */
 .beforeFooter {
-    font-size: 16px;
     color: black;
-    text-align: center;
+    font-size: 16px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
-/* Main section Highscores */
+
+/* Main section for Highscores.html */
+
+/* This is for the text input area */
 #user-name {
-    margin-right: 15px;
-    height: 50px;
-    width: 65%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     border-radius: 5px;
     border: 2px solid #444;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    height: 50px;
+    margin-right: 15px;
+    width: 65%;
 }
 
 #user-name:focus {
@@ -182,39 +185,43 @@ hr {
     font-size: 20px;
 }
 
+/* Styling for the final score text */
 #highScore {
     color: black;
-    font-weight: bold;
     font-size: 20px;
+    font-weight: bold;
 }
 
+/* Styling for the user's final score number */
 #user-score {
     font-size: 25px;
     margin-left: 5px;
 }
 
+/* Styling for the highscores list */
 .high-scores ul {
     font-size: 40px;
+    list-style: none;
     padding-left: 0;
     text-decoration: none;
-    list-style: none;
 }
 
+/* Styling for the error that'll show up if the user tries to enter an empty name */
 .error {
-    margin-top: 5px;
-    margin-bottom: 0;
     color: red;
+    margin-bottom: 0;
+    margin-top: 5px;
 }
 
 /* Footer */
 footer {
-    margin-top: auto;
-    height: 4.5rem;
-    width: 100%;
     background-color: #444;
-    color: white;
-    text-align: center;
     border-top: 3px solid rgb(145, 145, 145);
+    color: white;
+    height: 4.5rem;
+    margin-top: auto;
+    text-align: center;
+    width: 100%;
 }
 
 footer p{
@@ -224,17 +231,19 @@ footer p{
 
 /* Media */
 @media(max-width: 640px) {
+    /* Main page */
     .card-title {
         flex-direction: column;
     }
 
     .hsLink, .timer {
+        color: black;
         font-size: 25px;
         margin: 5px 0;
-        color: black;
         padding-right: 0px;
         position: relative;
     }
+
 
     /* Highscores page */
     .submit {
