@@ -25,6 +25,20 @@
                     </div>
     
                     <hr class="line">
+
+                    <!-- Just in case if there are no highscores yet -->
+                    <p class="noScores hide">Doesn't look like there are any highscores yet ☹. Play the main game to make some!</p>
+
+                    <!-- After the player completes the game they will be shown this -->
+                    <div class="createScore">
+                        <div class="finalScore">
+                            <p id="highScore">Final Score: </p><span id="user-score">0</span>
+                        </div>
+                        <div class="submit">
+                            <input type="text" placeholder="Enter Initials" name="user-name" id="user-name"/>
+                            <button type="submit" class="btn btn-secondary main-btn submit-btn">Submit</button>
+                        </div>
+                    </div>
                 </section>
             </main>
         </div>
@@ -36,5 +50,5 @@
     </footer>
     
     <!-- Javascript link -->
-    <script src="./assets/Javascript/script.js"></script>
+    <script src="./assets/Javascript/highscores.js"></script>
 </html>
