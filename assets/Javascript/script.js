@@ -199,7 +199,24 @@ var questions = [
             {item: 'October 20th, 2016', true: true}
         ]
     },
-    // {
-    //     question: '',
-    // }
+    {
+        question: 'Who directed the 2019 film Parasite?',
+        answers: [
+            {item: 'Guillermo del Toro', true: false},
+            {item: 'Bong Joon-ho', true: true},
+            {item: 'Steven Spielberg', true: false},
+            {item: 'Christopher Nolan', true: false}
+        ]
+    },
+    {
+        question: `What is Deku's quirk in the show My Hero Academia?`,
+        answers: [
+            {item: 'All for one', true: false},
+            {item: 'Half and Half', true: false},
+            {item: 'One for All', true: true},
+            {item: '4 for 4', true: false}
+        ]
+    }
 ]
+
+questions.sort(() => Math.random() - 0.5);
