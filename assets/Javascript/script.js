@@ -64,7 +64,7 @@ function countdownFunc() {
     }, 1000)
 }
 
-// Second function for when the start button is clicked
+// This function will officially start the game
 function startFunc() {
     // Show the timer.
     timer.classList.remove('hide');
@@ -237,6 +237,51 @@ var questions = [
             {item: 'Half and Half', true: false},
             {item: 'One for All', true: true},
             {item: '4 for 4', true: false}
+        ]
+    },
+    {
+        question: 'Who does Millie Bobby Brown play in Stranger Things?',
+        answers: [
+            {item: 'Eleven', true: true},
+            {item: 'Twelve', true: false},
+            {item: 'Seven', true: false},
+            {item: 'Nine', true: false}
+        ]
+    },
+    {
+        question: `Who is Tanjiro's sister in Demon Slayer?`,
+        answers: [
+            {item: 'Inosuke', true: false},
+            {item: 'Nezuko', true: true},
+            {item: 'Shinobu', true: false},
+            {item: 'Hotaru', true: false}
+        ]
+    },
+    {
+        question: `What is JerryRigEverything's real name?`,
+        answers: [
+            {item: 'Austin Evans', true: false},
+            {item: 'Linus Sebastian', true: false},
+            {item: 'Zack Nelson', true: true},
+            {item: 'Marques Brownlee', true: false}
+        ]
+    },
+    {
+        question: `What game did Mario first appear in?`,
+        answers: [
+            {item: 'Super Mario Bros', true: false},
+            {item: 'Dr. Mario', true: false},
+            {item: 'Super Mario Kart', true: false},
+            {item: 'Donkey Kong', true: true}
+        ]
+    },
+    {
+        question: 'Which NHL team was not in the Original 6?',
+        answers: [
+            {item: 'Pittsburgh Penguins', true: true},
+            {item: 'New York Rangers', true: false},
+            {item: 'Toronto Maple Leafs', true: false},
+            {item: 'Chicago Blackhawks', true: false}
         ]
     }
 ]
