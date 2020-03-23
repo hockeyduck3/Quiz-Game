@@ -16,7 +16,7 @@ body {
 }
 
 /* Navbar */
-h2, .navbar-brand, .main-btn, .game-btn {
+h2, .navbar-brand, .main-btn, .game-btn, .high-scores ul {
     font-family: 'Yellowtail', cursive;
 }
 
@@ -184,6 +184,13 @@ hr {
 #user-score {
     font-size: 25px;
     margin-left: 5px;
+}
+
+.high-scores ul {
+    font-size: 40px;
+    padding-left: 0;
+    text-decoration: none;
+    list-style: none;
 }
 
 /* Footer */
