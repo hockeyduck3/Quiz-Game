@@ -5,6 +5,7 @@ var text = document.querySelector('.createScore');
 var userScore = document.querySelector('#user-score');
 var ul = document.querySelector('.ul');
 var highScoreList = document.querySelector('.high-scores');
+var error = document.querySelector('.error');
 
 var userList = [];
 var finalScore = sessionStorage.getItem('fScore');
@@ -45,7 +46,11 @@ function load() {
 
 function addUser() {
     if (userName.value === '') {
-        alert(`Please enter a name in the Initials field`)
+        error.classList.remove('hide');
+
+        setTimeout(function () {
+            error.classList.add('hide');
+        }, 5000)
     } else {
         var user = userName.value.trim();
         var li = document.createElement('li');
@@ -58,10 +63,9 @@ function addUser() {
         }
 
         userList.push(highscores);
-        text.classList.add('hide');
-        highScoreList.classList.remove('hide');
 
         localStorage.setItem("highscores", JSON.stringify(userList));
         sessionStorage.removeItem('fScore');
+        location.reload();
     }
 }
