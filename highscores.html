@@ -30,7 +30,7 @@
                     <p class="noScores hide">Doesn't look like there are any highscores yet ☹. Play the main game to make some!</p>
 
                     <!-- After the player completes the game they will be shown this -->
-                    <div class="createScore">
+                    <div class="createScore hide">
                         <div class="finalScore">
                             <p id="highScore">Final Score: </p><span id="user-score">0</span>
                         </div>
@@ -38,6 +38,13 @@
                             <input type="text" placeholder="Enter Initials" name="user-name" id="user-name"/>
                             <button type="submit" class="btn btn-secondary main-btn submit-btn">Submit</button>
                         </div>
+                    </div>
+
+                    <!-- This is where users high scores will be shown -->
+                    <div class="high-scores hide">
+                        <ul class="ul">
+
+                        </ul>
                     </div>
                 </section>
             </main>
