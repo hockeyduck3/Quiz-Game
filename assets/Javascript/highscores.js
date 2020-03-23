@@ -61,12 +61,22 @@ function addUser() {
     var user = userName.value.trim();
 
     // If the user doesn't put in a name then this will show an error for 5 seconds
-    if (userName.value == '' || userName.value.match(/[a-z]/i) == null) {
+    if (user.value === '' || user.match(/[a-z]/i) == null) {
+        error.textContent = 'Field cannot be empty';
         error.classList.remove('hide');
 
         setTimeout(function () {
             error.classList.add('hide');
         }, 5000)
+
+    } else if (user.length > 3) {
+        error.textContent = 'Max character length is 3';
+        error.classList.remove('hide');
+
+        setTimeout(function () {
+            error.classList.add('hide');
+        }, 5000)
+
     } else {
 
         // This will grab the user's input and their final score and set that to an object
