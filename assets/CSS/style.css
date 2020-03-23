@@ -16,7 +16,7 @@ body {
 }
 
 /* Navbar */
-h2, .navbar-brand, .main-btn, .game-btn, #user-score {
+h2, .navbar-brand, .main-btn, .game-btn {
     font-family: 'Yellowtail', cursive;
 }
 
@@ -95,6 +95,13 @@ main p {
     margin-top: 20px;
 }
 
+.submit-btn {
+    padding-left: 15px;
+    height: 50px;
+    font-size: 1.5rem;
+    width: 100px;
+}
+
 .btn-block+.btn-block {
     margin-top: 20px;
 }
@@ -132,6 +139,10 @@ hr {
     font-size: 35px;
 }
 
+.finalScore, #user-name, .submit-btn {
+    display: inline-flex;
+}
+
 .hide {
     display: none;
 }
@@ -145,12 +156,8 @@ hr {
 }
 
 /* Main section Highscores */
-.createScore {
-    display: inline-flex;
-    width: 100%;
-}
-
 #user-name {
+    margin-right: 15px;
     height: 50px;
     width: 45%;
     border-radius: 5px;
@@ -166,19 +173,16 @@ hr {
 #user-name::placeholder {
     color: #444;
     font-size: 20px;
-    margin-left: 15px;
 }
 
 #highScore {
-    margin-left: 10px;
-    margin-top: 7px;
     color: black;
     font-weight: bold;
     font-size: 20px;
 }
 
 #user-score {
-    font-size: 35px;
+    font-size: 25px;
     margin-left: 5px;
 }
 
@@ -210,5 +214,12 @@ footer p{
         color: black;
         padding-right: 0px;
         position: relative;
+    }
+
+    /* Highscores page */
+    .submit {
+        display: flex;
+        flex-direction: row; 
+        margin-left: 0px;
     }
 }
