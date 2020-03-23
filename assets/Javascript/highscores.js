@@ -63,8 +63,9 @@ function load() {
 // Function to add new names to the highscore list
 function addUser() {
 
-    // This will get rid of any extra spaces that the user may have added on accident
+    // This will get rid of any extra spaces that the user may have added on accident, and make their input all uppercase letters.
     var user = userName.value.trim();
+    user = user.toUpperCase();
 
     // If the user doesn't put in a name then this will show an error for 5 seconds
     if (user.value === '' || user.match(/[a-z]/i) == null) {
