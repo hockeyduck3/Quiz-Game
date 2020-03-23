@@ -10,6 +10,7 @@ var cardTitle = document.querySelector('#cardH2');
 var giantNum = document.querySelector('.giantNumber');
 var questionTitle = document.querySelector('#question');
 var mainGame = document.querySelector('.main-game');
+var repoLink = document.querySelector('.beforeFooter');
 var timer = document.querySelector('.timer');
 var seconds = document.querySelector('.seconds');
 
@@ -41,10 +42,11 @@ function firstFunc() {
 
 // Countdown function for before the offcial game starts
 function countdownFunc() {
-    // Hide the instructions.
+    // Hide the instructions/github link
     instructions.classList.add('hide');
     startBtn.classList.add('hide');
-    giantNum.classList.remove('hide')
+    giantNum.classList.remove('hide');
+    repoLink.classList.add('hide');
 
 
     var count = 5;
