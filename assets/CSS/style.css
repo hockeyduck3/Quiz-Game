@@ -69,6 +69,11 @@ main p {
     line-height: 1.6em;
 }
 
+.giantNumber {
+    font-size: 200px;
+    text-align: center;
+}
+
 .instructions li {
     font-size: 18px;
     margin: 20px 0;
