@@ -186,10 +186,12 @@ function stopGame() {
     var finalScore = score + interval;
 
     if (finalScore < 0) {
-        finalScore = 0;
+        finalScore = 1;
     }
 
-    window.location.href = "highscores.html"
+    sessionStorage.setItem('fScore', finalScore)
+
+    window.location.href = "highscores.html";
 }
 
 // Questions/Answers
