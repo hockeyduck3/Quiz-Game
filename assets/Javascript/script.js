@@ -7,6 +7,7 @@ var finishBtn = document.querySelector('.finish-btn');
 var instructions = document.querySelector('.instructions');
 var highscoreLink = document.querySelector('.hsLink');
 var cardTitle = document.querySelector('#cardH2');
+var giantNum = document.querySelector('.giantNumber');
 var questionTitle = document.querySelector('#question');
 var mainGame = document.querySelector('.main-game');
 var timer = document.querySelector('.timer');
@@ -18,12 +19,12 @@ var time;
 var interval = 60;
 
 firstBtn.addEventListener('click', firstFunc);
-startBtn.addEventListener('click', startFunc);
+startBtn.addEventListener('click', countdownFunc);
 nextBtn.addEventListener('click', nextQuestion);
 finishBtn.addEventListener('click', stopGame);
 mainGame.addEventListener('click', checkAnswerFunc);
 
-// First function for when the first next button is clicked.
+// First function for when the first next button is clicked
 function firstFunc() {
 // This will hide the next button, the starting paragraph, and the link for the highscores.
     startP.classList.add('hide');
@@ -38,12 +39,33 @@ function firstFunc() {
     cardTitle.textContent = 'Instructions'
 }
 
-// Second function for when the start button is clicked.
-function startFunc() {
+// Countdown function for before the offcial game starts
+function countdownFunc() {
     // Hide the instructions.
     instructions.classList.add('hide');
     startBtn.classList.add('hide');
+    giantNum.classList.remove('hide')
 
+
+    var count = 5;
+    cardTitle.textContent = `Game starts in: ${count}`
+
+    var countdownTimer = setInterval( function() {
+        count--; 
+
+        cardTitle.textContent = `Game starts in: ${count}`;
+        giantNum.textContent = count;
+
+        if (count === 0) {
+            clearInterval(countdownTimer);
+            giantNum.classList.add('hide')
+            startFunc();
+        } 
+    }, 1000)
+}
+
+// Second function for when the start button is clicked
+function startFunc() {
     // Show the timer.
     timer.classList.remove('hide');
     mainGame.classList.remove('hide');
@@ -57,7 +79,7 @@ function startFunc() {
 
 // Timer function
 function timerFunc() {
-    time = setInterval( function(){ 
+    time = setInterval( function() { 
        interval--;
 
        seconds.textContent = interval;
