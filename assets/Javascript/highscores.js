@@ -1,6 +1,9 @@
 var cardTitle = document.querySelector('#cardH2');
+var submitBtn = document.querySelector('.submit-btn');
+var userName = document.querySelector('#user-name');
 
 // load();
+submitBtn.addEventListener('click', addUser);
 
 function load() {
     var finalScore = sessionStorage.getItem('fScore');
@@ -16,6 +19,10 @@ function load() {
     }
 }
 
-function addUser(event) {
-    event.preventDefault();
+function addUser() {
+    if (userName.value === '') {
+        alert(`Please enter a name in the Initials field`)
+    } else {
+        var user = userName.value.trim();
+    }
 }
