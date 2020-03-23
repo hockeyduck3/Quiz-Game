@@ -6,6 +6,7 @@
         <title>LJ's | Quiz Game</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/0a5e91de56.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./assets/CSS/style.css">
     </head>
 
@@ -38,10 +39,11 @@
                             <input type="text" placeholder="Enter Initials" name="user-name" id="user-name"/>
                             <button type="submit" class="btn btn-secondary main-btn submit-btn">Submit</button>
                         </div>
+                        <p class="error hide">Field cannot be empty</p>
                     </div>
 
                     <!-- This is where users high scores will be shown -->
-                    <div class="high-scores hide">
+                    <div class="high-scores">
                         <ul class="ul">
 
                         </ul>
@@ -50,6 +52,9 @@
             </main>
         </div>
     </body>
+
+    <!-- Quick link to the project's github repo, with fontawesome for the github logo -->
+    <a class="beforeFooter" href="https://github.com/hockeyduck3/Quiz-Game">Click here for this projects repo <i class="fab fa-github"></i></a>
 
     <footer>
         <p>Made with &hearts; in SLC.</p>
