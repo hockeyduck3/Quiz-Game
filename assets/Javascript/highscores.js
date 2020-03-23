@@ -1,10 +1,16 @@
 var cardTitle = document.querySelector('#cardH2');
 var submitBtn = document.querySelector('.submit-btn');
+
+// Variables for the addUser function
 var userName = document.querySelector('#user-name');
 var text = document.querySelector('.createScore');
 var userScore = document.querySelector('#user-score');
+
+// variables for the highscore list
 var ul = document.querySelector('.ul');
 var highScoreList = document.querySelector('.high-scores');
+
+// Variable for the error message
 var error = document.querySelector('.error');
 
 // This will set userList to an empty array and grab the final score from the other HTML page
