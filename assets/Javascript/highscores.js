@@ -67,8 +67,18 @@ function addUser() {
     var user = userName.value.trim();
     user = user.toUpperCase();
 
-    // If the user doesn't put in a name then this will show an error for 5 seconds
-    if (user.value === '' || user.match(/[a-z]/i) == null) {
+    // If the user tries to put numbers in they will be shown this error for 5 seconds.
+    if (user.match(/[0-9]/)){
+        error.textContent = 'Field cannot contain numbers';
+        error.classList.remove('hide');
+
+        setTimeout(function () {
+            error.classList.add('hide');
+        }, 5000)
+        
+    } 
+    // Or if the user tries to leave the field blank, or with a ton of spaces, they will be shown this error for 5 seconds.
+    else if (user.value === '' || user.match(/[a-z]/i) == null) {
         error.textContent = 'Field cannot be empty';
         error.classList.remove('hide');
 
@@ -76,7 +86,9 @@ function addUser() {
             error.classList.add('hide');
         }, 5000)
 
-    } else if (user.length > 3) {
+    }
+    // Finally this is will check and see if the user's input is more than 3 characters long, if it is, they will be shown this error. 
+    else if (user.length > 3) {
         error.textContent = 'Max character length is 3';
         error.classList.remove('hide');
 
@@ -84,8 +96,10 @@ function addUser() {
             error.classList.add('hide');
         }, 5000)
 
-    } else {
-
+    }
+    // If the user doesn't get any error's then the code to add them to the high score list will run. 
+    else {
+        
         // This will grab the user's input and their final score and set that to an object
         var highscores = {
             name: `${user}`,
