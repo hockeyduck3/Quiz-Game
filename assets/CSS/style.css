@@ -54,23 +54,36 @@ h2 {
 .hsLink, .timer {
     color: black;
     font-size: 25px;
-    margin-top: 12px;
-    padding-right: 18px;
+    margin: 12px 18px 0 0;
     position: absolute;
     right: 0;
     transition: ease-out 0.3s;
 }
 
-.hsLink:hover, .beforeFooter:hover {
-    color: rgb(109, 109, 109);
+.hsLink {
+    background-color: #444;
+    border-radius: 5px;
+    color: white;
+    padding: 6px;
+}
+
+.hsLink:hover {
+    color: white;
     text-decoration: none;
+    transform: scale(1.02);
     transition: linear 0.3s;
+}
+
+.beforeFooter:hover {
+    color: dimgray;
+    text-decoration: none;
+    transition: ease-in 0.3s;
 }
 
 /* Paragraphs in the main section */
 main p {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 2px;
     line-height: 1.7em;
@@ -93,7 +106,7 @@ main p {
     font-size: 2rem;
 }
 
-.main-btn:hover, .game-btn:hover {
+.main-btn:hover, .game-btn:hover, .hsLink:hover {
     background-color: rgb(116, 116, 116);
 }
 
@@ -164,8 +177,8 @@ hr {
 .beforeFooter {
     color: black;
     font-size: 16px;
-    margin: 0 auto;
-    margin-bottom: 30px;
+    margin: 0 auto 30px auto;
+    transition: ease-out 0.2s;
     width: 270px;
 }
 
@@ -241,14 +254,15 @@ footer p{
     /* Main page */
     .card-title {
         flex-direction: column;
+        text-align: center;
     }
 
     .hsLink, .timer {
-        color: black;
         font-size: 25px;
         margin: 5px 0;
         padding-right: 0px;
         position: relative;
+        text-align: center;
     }
 
 
