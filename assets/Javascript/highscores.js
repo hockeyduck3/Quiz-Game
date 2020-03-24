@@ -67,40 +67,25 @@ function addUser() {
     var user = userName.value.trim();
     user = user.toUpperCase();
 
-    // If the user tries to put numbers in they will be shown this error for 5 seconds.
+    // If the user tries to put use numbers in their name they will be met with an error
     if (user.match(/[0-9]/)){
         error.textContent = 'Field cannot contain numbers';
-        error.classList.remove('hide');
-
-        setTimeout(function () {
-            error.classList.add('hide');
-        }, 5000)
-        
+        errorFunc();
     } 
-    // Or if the user tries to leave the field blank, or with a ton of spaces, they will be shown this error for 5 seconds.
+    // Or if the user tries to leave the field blank, or with a ton of spaces, they will be shown this error.
     else if (user.value === '' || user.match(/[a-z]/i) == null) {
         error.textContent = 'Field cannot be empty';
-        error.classList.remove('hide');
-
-        setTimeout(function () {
-            error.classList.add('hide');
-        }, 5000)
-
+        errorFunc();
     }
     // Finally this is will check and see if the user's input is more than 3 characters long, if it is, they will be shown this error. 
     else if (user.length > 3) {
         error.textContent = 'Max character length is 3';
-        error.classList.remove('hide');
-
-        setTimeout(function () {
-            error.classList.add('hide');
-        }, 5000)
-
+        errorFunc();
     }
-    // If the user doesn't get any error's then the code to add them to the high score list will run. 
+    // If the user doesn't get any errors then the code to add them to the high score list will run. 
     else {
         
-        // This will grab the user's input and their final score and set that to an object
+        // This will grab the user's input and their final score and set them to an object
         var highscores = {
             name: `${user}`,
             highscore: finalScore
@@ -118,4 +103,13 @@ function addUser() {
         //Refresh the page 
         location.reload();
     }
+}
+
+function errorFunc() {
+    // The code above will tell the error what to say, this function will display it's message.
+    error.classList.remove('hide');
+
+    setTimeout(function () {
+        error.classList.add('hide');
+    }, 5000)
 }
