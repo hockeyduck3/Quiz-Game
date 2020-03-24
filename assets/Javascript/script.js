@@ -32,13 +32,22 @@ nextBtn.addEventListener('click', nextQuestion);
 finishBtn.addEventListener('click', stopGame);
 mainGame.addEventListener('click', checkAnswerFunc);
 
+// This function will check and see if the the user has already read the instructions. 
+introCheck();
+
+// If the user has already seen the instruction this session then it will show the start button instead of the next button.
+function introCheck() {
+    if (sessionStorage.getItem('skipIntro')) {
+        firstBtn.classList.add('hide');
+        startBtn.classList.remove('hide');
+    }
+}
+
 // First function for when the first next button is clicked
 function firstFunc() {
 
-// This will hide the next button, the starting paragraph, and the link for the highscores.
-    startP.classList.add('hide');
-    firstBtn.classList.add('hide')
-    highscoreLink.classList.add('hide');
+// This function will hide the next button, the starting paragraph, and the link for the highscores.
+    hideStart();
 
 // This will then show the start button, and the instructions for the game!
     startBtn.classList.remove('hide');
@@ -51,11 +60,14 @@ function firstFunc() {
 // Countdown function for before the offcial game starts
 function countdownFunc() {
 
-    // Hide the instructions/github link
-    instructions.classList.add('hide');
-    startBtn.classList.add('hide');
-    giantNum.classList.remove('hide');
-    repoLink.classList.add('hide');
+    // Run the function to hide the start and instructions
+    hideInstructions();
+    hideStart();
+
+    // If the user has not read the instructions before, this if statement will make sure they don't have to read the instruction again this session.
+    if (sessionStorage.getItem('skipIntro') == null) {
+        sessionStorage.setItem('skipIntro', true)
+    }
 
     // Set the countdown to 5 seconds and then start it
     var count = 5;
@@ -240,6 +252,21 @@ function stopGame() {
 
     // Move the user over to the other HTML page
     window.location.href = "highscores.html";
+}
+
+// Hide the starting paragraph function
+function hideStart() {
+    startP.classList.add('hide');
+    firstBtn.classList.add('hide');
+    highscoreLink.classList.add('hide');
+}
+
+// Hide the instructions/github link
+function hideInstructions() {
+    instructions.classList.add('hide');
+    startBtn.classList.add('hide');
+    giantNum.classList.remove('hide');
+    repoLink.classList.add('hide');
 }
 
 // Questions/Answers
