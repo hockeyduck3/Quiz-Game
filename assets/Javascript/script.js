@@ -98,25 +98,25 @@ function timerFunc() {
 
        seconds.textContent = interval;
 
-        // Once the timer gets to 30 seconds left, it will go to a darkred color, letting the user know they're starting to run out of time.
-        if (interval === 30){
+        // Once the timer gets to 30 seconds or less, it will go to a darkred color, letting the user know they're starting to run out of time.
+        if (interval <= 30){
             timer.setAttribute('style', 'color: darkred')
         }
 
-        // Once the timer hit's 20 seconds the color will get slightly brighter red
-        if (interval === 20) {
+        // Once the timer hit's 20 seconds or less the color will get slightly brighter red
+        if (interval <= 20) {
             timer.setAttribute('style', 'color: rgb(163, 4, 4)')
         }
 
         // Once the timer hits 10 seconds then the color will go to a very bright red
-        if (interval === 10) {
+        if (interval <= 10) {
             timer.setAttribute('style', 'color: red')
         }
 
         // If the timer hits 0 then the game will end
         if (interval === 0) {
-        clearInterval(time);
-        stopGame();
+            clearInterval(time);
+            stopGame();
         }
     }, 1000);
 }
@@ -211,7 +211,11 @@ function checkAnswerFunc(event) {
             // But if the user is wrong, they will lose 5 points and be told they were wrong...
             else {
                 cardTitle.textContent = 'Wrong...'
-                score -= 5;
+                interval -= 5; 
+                if (interval <= 0) {
+                    interval = 0;
+                    stopGame();
+                }
             }
         }
     }
@@ -261,7 +265,7 @@ var questions = [
     {
         question: 'What day did Google release the first Pixel phone?',
         answers: [
-            {item: 'August 16th, 2006', true: false},
+            {item: 'August  16th, 2006', true: false},
             {item: 'July 4th, 2011', true: false},
             {item: 'November 2nd, 1999', true: false},
             {item: 'October 20th, 2016', true: true}
