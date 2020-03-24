@@ -116,6 +116,7 @@ main p {
 
 .btn-secondary.focus, .btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active {
     background-color: rgb(116, 116, 116);
+    box-shadow: 0 0 0 0.2rem rgb(0, 136, 255)
 }
 
 /* Styling for the main card in the center of the screen */
