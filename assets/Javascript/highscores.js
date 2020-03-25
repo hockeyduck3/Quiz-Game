@@ -17,8 +17,10 @@ var error = document.querySelector('.error');
 var userList = [];
 var finalScore = sessionStorage.getItem('fScore');
 
-// Trigger the load function and have an event listner for the submit button
+// Trigger the load function
 load();
+
+//Event listener for the submit button
 submitBtn.addEventListener('click', addUser);
 
 // Loading function
@@ -108,8 +110,17 @@ function addUser() {
 function errorFunc() {
     // The code above will tell the error what to say, this function will display it's message.
     error.classList.remove('hide');
-
-    setTimeout(function () {
-        error.classList.add('hide');
-    }, 5000)
 }
+
+// Event listner for the Enter Your Initials input
+userName.addEventListener('keypress', function(event) {
+    // If an error is being displayed then this will make it leave once the users hits a key.
+    if (error.classList.contains('hide') === false) {
+        error.classList.add('hide');
+    }
+
+    // If the user clicks the 'Enter' key, then this will run the addUser function so they don't have to click the submit button.
+    if (event.keyCode === 13){
+        addUser();
+    }
+});
