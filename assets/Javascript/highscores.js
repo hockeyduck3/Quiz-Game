@@ -87,7 +87,7 @@ function addUser() {
         
         // This will grab the user's input and their final score and set them to an object
         var highscores = {
-            name: `${user}`,
+            name: user,
             highscore: finalScore
         }
 

@@ -54,7 +54,7 @@ function firstFunc() {
     instructions.classList.remove('hide');
 
 // This will change the h2 from Quiz Game! to Instructions.
-    cardTitle.textContent = 'Instructions'
+    cardTitle.textContent = 'Instructions';
 }
 
 // Countdown function for before the offcial game starts
@@ -66,7 +66,7 @@ function countdownFunc() {
 
     // If the user has not read the instructions before, this if statement will make sure they don't have to read the instruction again this session.
     if (sessionStorage.getItem('skipIntro') == null) {
-        sessionStorage.setItem('skipIntro', true)
+        sessionStorage.setItem('skipIntro', true);
     }
 
     // Set the countdown to 5 seconds and then start it
@@ -83,7 +83,7 @@ function countdownFunc() {
         // Once the timer hits 0 the game will start
         if (count === 0) {
             clearInterval(countdownTimer);
-            giantNum.classList.add('hide')
+            giantNum.classList.add('hide');
             startFunc();
         } 
     }, 1000)
@@ -112,17 +112,17 @@ function timerFunc() {
 
         // Once the timer gets to 30 seconds or less, it will go to a darkred color, letting the user know they're starting to run out of time.
         if (interval <= 30){
-            timer.setAttribute('style', 'color: darkred')
+            timer.setAttribute('style', 'color: darkred');
         }
 
         // Once the timer hit's 20 seconds or less the color will get slightly brighter red
         if (interval <= 20) {
-            timer.setAttribute('style', 'color: rgb(163, 4, 4)')
+            timer.setAttribute('style', 'color: rgb(163, 4, 4)');
         }
 
         // Once the timer hits 10 seconds then the color will go to a very bright red
         if (interval <= 10) {
-            timer.setAttribute('style', 'color: red')
+            timer.setAttribute('style', 'color: red');
         }
 
         // If the timer hits 0 then the game will end
@@ -155,7 +155,7 @@ function questionsFunc() {
 
         // Depending on which answer is true, this will go through and add a dataset of correct onto the only answer
         if (questions[index].answers[i].true) {
-            document.querySelector(`.game-btn-${randomNumber[i]}`).dataset.correct = 'true'
+            document.querySelector(`.game-btn-${randomNumber[i]}`).dataset.correct = 'true';
           }
     }
 }
@@ -181,7 +181,7 @@ function nextQuestion() {
     }
 
     // hide the next button
-    nextBtn.classList.add('hide')
+    nextBtn.classList.add('hide');
 
     // Trigger the questions function again
     questionsFunc();
@@ -217,13 +217,13 @@ function checkAnswerFunc(event) {
     
             // This will check which button the user clicked on. If they clicked on the correct answer then the card title will say correct and will give the player 5 points! 
             if (event.target.dataset.correct === 'true') {
-                cardTitle.textContent = 'Correct!'
+                cardTitle.textContent = 'Correct!';
                 score += 5;
             } 
             // But if the user is wrong, they will lose 5 points and be told they were wrong...
             else {
-                cardTitle.textContent = 'Wrong...'
-                interval -= 5; 
+                cardTitle.textContent = 'Wrong...';
+                interval -= 5;
                 if (interval <= 0) {
                     interval = 0;
                     stopGame();
