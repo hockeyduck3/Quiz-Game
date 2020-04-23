@@ -4,7 +4,7 @@
 
 * I built this site from scratch using HTML, CSS, Bootstrap, and Javascript.
 
-* This quiz game site is live on github pages: https://hockeyduck3.github.io/Quiz-Game/
+* This quiz game site is live on github pages https://hockeyduck3.github.io/Quiz-Game/
 
 * This was an assignment for my Full Stack Web Development course, but how we designed it, the questions, the functionality of the game, was all done by me.
 
