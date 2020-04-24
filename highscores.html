@@ -28,26 +28,28 @@
     
                     <hr class="line">
 
-                    <!-- Just in case if there are no highscores yet -->
-                    <p class="noScores hide">Doesn't look like you have any highscores yet ☹. Play the main game to make some!</p>
+                    <div class="mainCard">
+                        <!-- Just in case if there are no highscores yet -->
+                        <p class="noScores hide">Doesn't look like you have any highscores yet ☹. Play the main game to make some!</p>
 
-                    <!-- After the player completes the game they will be shown this -->
-                    <div class="createScore hide">
-                        <div class="finalScore">
-                            <p id="highScore">Final Score: </p><span id="user-score">0</span>
+                        <!-- After the player completes the game they will be shown this -->
+                        <div class="createScore hide">
+                            <div class="finalScore">
+                                <p id="highScore">Final Score: </p><span id="user-score">0</span>
+                            </div>
+                            <div class="submit">
+                                <input type="text" placeholder="Enter your initials" name="user-name" id="user-name"/>
+                                <button type="submit" class="btn btn-secondary main-btn submit-btn">Submit</button>
+                            </div>
+                            <p class="error hide"></p>
                         </div>
-                        <div class="submit">
-                            <input type="text" placeholder="Enter your initials" name="user-name" id="user-name"/>
-                            <button type="submit" class="btn btn-secondary main-btn submit-btn">Submit</button>
+
+                        <!-- This is where users high scores will be shown -->
+                        <div class="high-scores">
+                            <ul class="ul">
+
+                            </ul>
                         </div>
-                        <p class="error hide"></p>
-                    </div>
-
-                    <!-- This is where users high scores will be shown -->
-                    <div class="high-scores">
-                        <ul class="ul">
-
-                        </ul>
                     </div>
                 </section>
             </main>
@@ -61,6 +63,8 @@
             <p id="copy">&copy; Copyright 2020.</p>
         </footer>
         
+        <!-- Regular jQuery Link -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <!-- Javascript link -->
         <script src="./assets/Javascript/highscores.js"></script>
     </body>
